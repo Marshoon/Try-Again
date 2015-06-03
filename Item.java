@@ -4,6 +4,7 @@ public class Item implements Rules{
 	private int weight;
 	private String color;
 	private int dura;
+	private String type;
 	/**
 	 * Constructs an item with a <Strong>String</Strong> Name, an <Strong>Int</Strong> Weight, a <Strong>String</Strong> Color, and an <Strong>Int</Strong> Durability.
 	 * @param Name : Name of item
@@ -12,11 +13,12 @@ public class Item implements Rules{
 	 * @param Durability : number of uses
 	 */
 	// Constructor for Items
-	public Item (String Name, int Weight, String Color, int Durability){
+	public Item (String Name, int Weight, String Color, int Durability, String type){
 		name = Name;
 		weight = Weight;
 		color = Color;
 		dura = Durability;
+		this.type = type;
 	}
 	/**
 	 * @return Returns the items name.
@@ -47,5 +49,8 @@ public class Item implements Rules{
 	 */
 	public void setDura(int x) {
 		dura = x;
+	}
+	public String getType(){
+		return type;
 	}
 }

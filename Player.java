@@ -1,10 +1,13 @@
 
 public class Player extends Entity{
-	private int Damage;
+	public static int Damage;
 	private String Race;
 	private static int rowLoc = 0, colLoc = 0;
+	public final int h, bs;
 	public Player(String name, int weight, int health, int inventory, int damage, String race) {
 		super(name, weight, health, inventory);
+		h = health;
+		bs = damage;
 		setDamage(damage);
 		setRace(race);
 	}
@@ -32,7 +35,11 @@ public class Player extends Entity{
 	public static void setCurrentC(int x){
 		colLoc = x;
 	}
+//	public String toString(){
+//		return getName() + " is a " + getRace() + " with a base damage of " + getDamage() + " and a total health of " + getHealth() + " and " + getInventory() + " inventory spaces";
+//	}
+	@Override
 	public String toString(){
-		return getName() + " is a " + getRace() + " with a base damage of " + getDamage() + " and a total health of " + getHealth() + " and " + getInventory() + " inventory spaces";
+		return getName() + " - " +  getDamage() + " has " + getHealth() + " health " + getInventory().length + " inventory spaces";
 	}
 }

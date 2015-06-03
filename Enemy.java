@@ -31,4 +31,8 @@ public class Enemy extends Entity {
 	public boolean isEnemy(){
 		return true;
 	}
+	@Override
+	public String toString(){
+		return super.getName() + " - " + getDamage() + " - " + getHealth();
+	}
 }

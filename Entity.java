@@ -22,21 +22,22 @@ public class Entity implements Rules_E {
 		this.inventory = new Item [inventory];
 	}
 	/**
-	 * @param takes a <Strong>String</Strong> x to add to inventory
+	 * @param takes a <Strong>String</Strong> x to Remove to inventory
 	 */
-	public void removeFromInven(Item x){
+	public String drop(String x){
 		int start = 0;
 		for (int i = 0; i < inventory.length; i++) {
-			if (x.getName().equalsIgnoreCase(inventory[i].getName())) {
+			if (x.equalsIgnoreCase(inventory[i].getName())) {
 				inventory[count] = null;
 				start = i;
 				break;
 			}
 		}
 		for (int i = start; i < inventory.length; i++) {
-			
+			inventory[start - 1] = inventory[start];
 		}
 		count--;
+		return (x + " was dropped");
 	}
 	/**
 	 * @param takes a <Strong>String</Strong> x to add to inventory

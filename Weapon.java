@@ -2,7 +2,7 @@ public class Weapon extends Item {
 	private int damage;
 	private int rarity;
 	public Weapon(String Name, int Weight, String Color, int Durability, int Damage, int Rarity) {
-		super(Name, Weight, Color, Durability);
+		super(Name, Weight, Color, Durability, "Weapon");
 		setDamage(Damage);
 		setRarity(Rarity);
 	}
@@ -19,7 +19,10 @@ public class Weapon extends Item {
 		this.rarity = rarity;
 	}
 	@Override
+//	public String toString(){
+//		return "A " + super.getColor() + " " + super.getName() + " with damage of " + damage + " and a durability of " + super.getDura() + ".";
+//	}
 	public String toString(){
-		return "A " + super.getColor() + " " + super.getName() + " with damage of " + damage + " and a durability of " + super.getDura() + ".";
+		return super.getName() + " - " + damage + " - " + super.getDura();
 	}
 }
